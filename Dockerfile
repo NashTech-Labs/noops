@@ -1,4 +1,4 @@
-FROM python3
+FROM google/cloud-sdk
  
 WORKDIR /app
  

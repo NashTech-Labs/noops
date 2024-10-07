@@ -5,261 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoOps</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-
-            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        }
-
-        header {
-            padding: 13px 20px;
-            text-align: center;
-            display: flex;
-            position: fixed;
-            top: 0; /* Ensure it's fixed at the top */
-            left: 0; /* Align it to the left */
-            right: 0; /* Stretch to the right edge */
-            align-items: center;
-            justify-content: space-between;
-            background-image: linear-gradient(to right, #6B21B9, #991b1b);
-            height: 60px; /* Define the height of the header */
-            z-index: 1000; /* Ensure it stays above other content */
-        }
-        #pdf{
-            text-align: center;
-            display: flex;
-            position: fixed;
-            top: 65px; /* Ensure it's fixed at the top */
-            left: 75%; /* Align it to the left */
-            right: 0; /* Stretch to the right edge */
-            align-items: center;
-            justify-content: space-between;
-            background-color: white;
-            width: 120px;
-            padding: 10px 10px;
-            border-radius: 10px;
-            display: none;
-            border:1px solid rgba(0, 0, 0, 0.646);
-            z-index: 1000; /* Ensure it stays above other content */
-            cursor: pointer;
-
-        }
-        #pdf:hover{
-            background-color: #1a0b3216;
-            border: 1px solid white;
-        }
-        #pdf:hover a{
-            color: white;
-        }
-        #pdf a {
-            text-decoration: none;
-            color: black;
-        }
-
-        header:hover {
-            background-image: linear-gradient(to right, #fff, #fff);
-            color: black;
-        }
-
-        header:hover nav a {
-            color: black;
-        }
-
-        header:hover #button {
-            color: white;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            margin-left: 13%
-        }
-
-        nav a {
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            text-align: center;
-            font-size: 18px;
-            font-weight: 900;
-
-        }
-
-        header:hover nav a:hover {
-            background-image: linear-gradient(to right, #6B21B9, #991b1b);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .container {
-            height: 50%;
-            padding-left: 5rem;
-            padding-right: 5rem;
-            padding-top: 200px;
-            padding-bottom: 30px;
-            margin: 0;
-            background-image: linear-gradient(to right, #6B21B9, #991b1b);
-        }
-
-        .container h1 {
-            font-size: 8rem;
-            color: white;
-            font-weight: 700;
-            line-height: 1;
-            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            text-align: left;
-            margin-top: 0;
-            width: 60%;
-        }
-
-        .container p {
-            font-size: 1.875rem;
-            line-height: 2.25rem;
-            /* lg */
-            color: white;
-            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-
-            margin-top: -3.25rem;
-            font-weight: 420;
-            /* Resetting margin-top */
-        }
-
-        .why {
-            padding-left: 40px;
-            padding-right: 40px;
-            padding: 1.25rem;
-        }
-
-        .why1 {
-            margin: 60px;
-            display: flex;
-            padding-top: 0;
-            flex-direction: row;
-            box-shadow:
-                -5px 0 5px -5px rgba(0, 0, 0, 0.1),
-                5px 0 5px -5px rgba(0, 0, 0, 0.1),
-                0 10px 5px -5px rgba(0, 0, 0, 0.1);
-        }
-
-        .card {
-            padding: 30px;
-        }
-
-        .card p {
-            margin: 1rem;
-            line-height: 25px;
-            word-spacing: 1px;
-        }
-
-        .imagecard {
-            margin: auto;
-            padding: 50px;
-        }
-
-        .imagecard img {
-            width: 700px;
-            height: 350px;
-        }
-
-        .ppt-viewer {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-            border: 1px solid #ccc;
-            margin: 20px auto;
-            /* Center the viewer horizontally */
-        }
-
-        .controls {
-            margin: 20px 0;
-        }
-
-        .controls button {
-            background-color: #333;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 16px;
-            margin: 0 10px;
-       }
-
-        .controls button:hover {
-            background-color: #555;
-        }
-
-        footer {
-            background-image: linear-gradient(284.04deg, #200E3D 0%, #60166C 25.33%, #4E2A8C 52.07%, #1A0B32 100%);
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            width: 100%;
-            position: fixed;
-            bottom: 0;
-        }
-
-        .logo {
-            width: 80px;
-            /* Adjust the width as needed */
-            height: auto;
-            margin-left: 20px;
-            /* Adjust margin for spacing */
-        }
-
-        .button {
-    margin-left: 30px;
-    display: inline-block;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: 400;
-    color: #fff;
-    background-color: #ff0022; /* Bright blue background */
-    border: none;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-        }
-
-        #button:hover {
-            background-image: linear-gradient(to right, #6B21B9, #991b1b);
-            background-clip: unset;
-            color: white;
-        }
-
-        .a:hover {
-            background-color: white;
-        }
-
-.try-now-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.try-now-button:hover {
-    background-color: #0056b3;
-}
-
-.try-now-button:active {
-    background-color: #004494;
-    transform: scale(0.98);
-}
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+   
     <script>
         function showPdf(){
             if(document.getElementById("pdf").style.display=="block")
@@ -305,34 +52,65 @@ function runTerraform() {
             button.textContent = "Try Now";
             button.disabled = false;  // Re-enable the button after completion
         });
-        }
+        }   
+    
+        
+    function loadBlogs() {
+        console.log("Loading blogs..."); // Log when loading starts
+        fetch('blogs.html')
+            .then(response => {
+                if (!response.ok) {
+                    console.error('Network response was not ok:', response.statusText);
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById("mainContent").innerHTML = data;
+                document.querySelector('header').style.display = 'none'; // Hide the navbar if desired
+                console.log("Blogs loaded successfully."); // Log successful load
+            })
+            .catch(error => {
+                console.error('Error loading blogs:', error);
+                document.getElementById("mainContent").innerHTML = "<p>Error loading blogs. Please try again later.</p>";
+            });
+    }
+
+
+</script>
 
 
     </script>
 </head>
 
 <body>
+<div>
     <header class="a">
         <nav>
+            <!-- <a href="/">Home</a> -->
             <a href="index.html#what">What</a>
             <a href="index.html#why">Why</a>
             <a href="index.html#Characteristics">Characteristics</a>
             <a href="index.html#NoOpsArc">Architecture​</a>
             <a href="index.html#Benefits">Benefits</a>
             <a href="index.html#NoOps">NoOps Vs DevOps</a>
-            <a href="index.html#genaidisruption">Try Automation</a>
+            <a href="index.html#TryAutomation">Try Automation</a>
+            <a href="#blogs" onclick="loadBlogs()">Blogs</a>
             <a href="index.html#demo">DEMO</a>
             <a href="javascript:void(0)" onclick="showPdf()">NoOPS REFERENCE</a>
                 
-            <!-- <a href="/">Home</a> -->
             <a href="https://www.nashtechglobal.com/about-us" target="_blank">About</a>
             <a href="https://www.nashtechglobal.com/#contact-us-form" class="button" id="button">Contact</a>
                 
         </nav>
     </header>
+</div>
+
     <div id="pdf">
         <a href="pdf/noops.pdf">NoOps Guide</a>
     </div>
+
+    <div id="mainContent">
     <div class="container">
         <img src="logo/logo.png" alt="Logo" class="logo"
             style="height: 110px; width: 110px;margin-left: -10px; margin-top: -1000px;">
@@ -341,6 +119,7 @@ function runTerraform() {
             <p>The Future of Operations in the DevOps Era</p>
         </div>
     </div>
+
     <div class="why" id="what">
         <div class="why1">
             <div class="card">
@@ -435,7 +214,7 @@ function runTerraform() {
         </div>
     </div>
 
-    <div class="why" id="genaidisruption">
+    <div class="why" id="TryAutomation">
         <div class="why1">
             <div class="imagecard">
                 <img src="image/pic9.png" alt="" style="height: 470px;">
@@ -480,6 +259,7 @@ function runTerraform() {
             </div>
         </div>
     </div>
+</div>
 </body>
 
 </html>

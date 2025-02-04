@@ -1,3 +1,5 @@
+
+
 body {
     margin: 0;
     padding: 0;
@@ -123,31 +125,58 @@ header:hover nav a:hover {
     /* Resetting margin-top */
 }
 
+
+
 .why {
     padding-left: 40px;
     padding-right: 40px;
     padding: 1.25rem;
 }
 
+
+
 .why1 {
-    margin: 60px;
     display: flex;
+    margin: 60px;
+    justify-content: center;
     padding-top: 0;
-    flex-direction: row;
     box-shadow:
-        -5px 0 5px -5px rgba(0, 0, 0, 0.1),
-        5px 0 5px -5px rgba(0, 0, 0, 0.1),
-        0 10px 5px -5px rgba(0, 0, 0, 0.1);
+    -5px 0 5px -5px rgba(0, 0, 0, 0.1),
+    5px 0 5px -5px rgba(0, 0, 0, 0.1),
+    0 10px 5px -5px rgba(0, 0, 0, 0.1);
+
 }
+
 
 .card {
     padding: 30px;
 }
 
+.card img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%; /* Keeps it responsive */
+    height: auto;
+}
+
+
 .card p {
     margin: 1rem;
     line-height: 25px;
     word-spacing: 1px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers the image vertically */
+    width: 100%; /* Ensures it takes full width */
+    margin-top: 20px; /* Optional: Adds space above the image */
+}
+
+.image-container img {
+    max-width: 100%; /* Makes the image responsive */
+    height: auto; /* Maintains aspect ratio */
 }
 
 .imagecard {
@@ -159,6 +188,7 @@ header:hover nav a:hover {
     width: 700px;
     height: 350px;
 }
+
 
 .ppt-viewer {
     width: 100%;
@@ -250,4 +280,78 @@ background-color: #0056b3;
 .try-now-button:active {
 background-color: #004494;
 transform: scale(0.98);
+}
+
+/* Tech Stack Table Styling */
+.table-container {
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Remove unwanted background, shadow, or outline */
+.table-container * {
+    background: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.subheading {
+    background-color: #007bff;  /* Adjust color to your preferred shade of blue */
+    color: white;               /* Ensure text is visible on the blue background */
+    padding: 10px;              /* Add padding for spacing */
+    border-radius: 5px;         /* Optional: for rounded corners */
+  }
+  
+
+.table-container h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table-container th, 
+.table-container td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.table-container th {
+    background: #007bff !important;  /* Ensure the correct blue color */
+    color: white !important;
+}
+
+.table-container tbody tr:nth-child(odd) {
+    background: #f2f2f2;
+}
+
+.table-container tbody tr:hover {
+    background: #e9ecef;
+    transition: 0.3s;
+}
+
+/* Responsive Table */
+@media screen and (max-width: 768px) {
+    .table-container table {
+        font-size: 14px;
+    }
+
+    .table-container th, 
+    .table-container td {
+        padding: 10px;
+    }
 }
